@@ -175,6 +175,14 @@
 				echo "<tr><th colspan='4'>Sprites</th></tr>";
 				echo "<tr><th>Front Normal</th><th>Front Shiny</th><th>Back Normal</th><th>Back Shiny</th></tr>";
 				echo "<tr><td><center><img src='images/front_normal/$id.png' alt='$name' title='$name'></center></td><td><center><img src='images/front_shiny/$id.png' alt='$name' title='$name'></center></td><td><center><img src='images/back_normal/$id.png' alt='$name' title='$name'></center></td><td><center><img src='images/back_shiny/$id.png' alt='$name' title='$name'></center></td></tr></table>";
+				
+				//Location
+				echo "<table align='center' cellspacing='3'>";
+				echo "<tr><th colspan='2'>Locations</th></tr>";
+				echo "<tr><td width=10% class='black'>Black</td><td>$blackLocationName</td></tr>";
+				echo "<tr><td width=10% class='white'>White</td><td>$whiteLocationName</td></tr>";
+				echo "<tr><td width=10% class='black'>Black 2</td><td>No database info yet.</td></tr>";
+				echo "<tr><td width=10% class='white'>White 2</td><td>No database info yet.</td></tr></table>";
 			}
 		?>
 	</body>

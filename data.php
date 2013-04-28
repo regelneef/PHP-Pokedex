@@ -75,5 +75,54 @@
 	$row = mysql_fetch_array($result);
 	$habitatName = $row[0];
 	
+	$query = "SELECT locationId FROM monsterlocations WHERE monsterId=".$id." AND (gameSetId=11 or gameSetId=13)";
+	$result = mysql_query($query);
+	
+	for ($i=0;$row = mysql_fetch_array($result);$i++)
+		$whiteLocationID[$i] = $row[0];
+		
+	if (!empty($whiteLocationID))
+	{
+		for ($i=0;$i<count($whiteLocationID);$i++)
+		{
+			$query = "SELECT name FROM locations WHERE id=".$whiteLocationID[$i];
+			$result = mysql_query($query);
+			$row = mysql_fetch_array($result);
+			if ($i == 0)
+				$whiteLocationName = $row[0];
+				
+			else
+				$whiteLocationName = $whiteLocationName .", ". $row[0];
+		}
+	}
+	
+	else
+		$whiteLocationName = "Trade required.";
+		
+	$query = "SELECT locationId FROM monsterlocations WHERE monsterId=".$id." AND (gameSetId=11 or gameSetId=12)";
+	$result = mysql_query($query);
+	
+	for ($i=0;$row = mysql_fetch_array($result);$i++)
+		$blackLocationID[$i] = $row[0];
+		
+	if (!empty($blackLocationID))
+	{
+		for ($i=0;$i<count($blackLocationID);$i++)
+		{
+			$query = "SELECT name FROM locations WHERE id=".$blackLocationID[$i];
+			$result = mysql_query($query);
+			$row = mysql_fetch_array($result);
+			if ($i == 0)
+				$blackLocationName = $row[0];
+				
+			else
+				$blackLocationName = $blackLocationName .", ". $row[0];
+			
+		}
+	}
+	
+	else
+		$blackLocationName = "Trade required.";
+	
 	mysql_close($connection);
 ?>

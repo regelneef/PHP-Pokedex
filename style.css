@@ -66,3 +66,17 @@ a, a:visited
 {
 	visibility:hidden;
 }
+
+.black
+{
+	font-weight: bold;
+	background-color: black;
+	color: white;
+}
+
+.white
+{
+	font-weight: bold;
+	background-color:white;
+	color: black;
+}
