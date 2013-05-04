@@ -123,6 +123,47 @@
 	
 	else
 		$blackLocationName = "Trade required.";
+		
+	$DTNormal = 1;
+	$DTFire = 1;
+	$DTWater = 1;
+	$DTElectric = 1;
+	$DTGrass = 1;
+	$DTIce = 1;
+	$DTFighting = 1;
+	$DTPoison = 1;
+	$DTGround = 1;
+	$DTFlying = 1;
+	$DTPsychic = 1;
+	$DTBug = 1;
+	$DTRock = 1;
+	$DTGhost = 1;
+	$DTDragon = 1;
+	$DTDark = 1;
+	$DTSteel = 1;
+	
+	damageTaken($type, $type2, $DTNormal, $DTFire, $DTWater, $DTElectric, $DTGrass, $DTIce, $DTFighting, $DTPoison, $DTGround, $DTFlying, $DTPsychic, $DTBug, $DTRock, $DTGhost, $DTDragon, $DTDark, $DTSteel);
+	
+	$DDNormal = 1;
+	$DDFire = 1;
+	$DDWater = 1;
+	$DDElectric = 1;
+	$DDGrass = 1;
+	$DDIce = 1;
+	$DDFighting = 1;
+	$DDPoison = 1;
+	$DDGround = 1;
+	$DDFlying = 1;
+	$DDPsychic = 1;
+	$DDBug = 1;
+	$DDRock = 1;
+	$DDGhost = 1;
+	$DDDragon = 1;
+	$DDDark = 1;
+	$DDSteel = 1;
+	
+	damageDone($type, $type2, $DDNormal, $DDFire, $DDWater, $DDElectric, $DDGrass, $DDIce, $DDFighting, $DDPoison, $DDGround, $DDFlying, $DDPsychic, $DDBug, $DDRock, $DDGhost, $DDDragon, $DDDark, $DDSteel);
+	
 	
 	mysql_close($connection);
 ?>

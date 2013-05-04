@@ -176,6 +176,88 @@
 				echo "<tr><th>Front Normal</th><th>Front Shiny</th><th>Back Normal</th><th>Back Shiny</th></tr>";
 				echo "<tr><td><center><img src='images/front_normal/$id.png' alt='$name' title='$name'></center></td><td><center><img src='images/front_shiny/$id.png' alt='$name' title='$name'></center></td><td><center><img src='images/back_normal/$id.png' alt='$name' title='$name'></center></td><td><center><img src='images/back_shiny/$id.png' alt='$name' title='$name'></center></td></tr></table>";
 				
+				echo "<br>";
+				
+				//Damage taken
+				echo "<table align='center' cellspacing='3'>";
+				echo "<tr><th colspan='18'>Damage taken</th></tr>";
+				echo "<tr><td width=5% class='center'><img src='images/types/Normal.png' alt='Normal' title='Normal'></td>";
+				echo "<td width=5% class='center'><img src='images/types/Fire.png' alt='Fire' title='Fire'></td>";
+				echo "<td width=5% class='center'><img src='images/types/Water.png' alt='Water' title='Water'></td>";
+				echo "<td width=5% class='center'><img src='images/types/Electric.png' alt='Electric' title='Electric'></td>";
+				echo "<td width=5% class='center'><img src='images/types/Grass.png' alt='Grass' title='Grass'></td>";
+				echo "<td width=5% class='center'><img src='images/types/Ice.png' alt='Ice' title='Ice'></td>";
+				echo "<td width=5% class='center'><img src='images/types/Fighting.png' alt='Fighting' title='Fighting'></td>";
+				echo "<td width=5% class='center'><img src='images/types/Poison.png' alt='Poison' title='Poison'></td>";
+				echo "<td width=5% class='center'><img src='images/types/Ground.png' alt='Ground' title='Ground'></td>";
+				echo "<td width=5% class='center'><img src='images/types/Flying.png' alt='Flying' title='Flying'></td>";
+				echo "<td width=5% class='center'><img src='images/types/Psychic.png' alt='Psychic' title='Psychic'></td>";
+				echo "<td width=5% class='center'><img src='images/types/Bug.png' alt='Bug' title='Bug'></td>";
+				echo "<td width=5% class='center'><img src='images/types/Rock.png' alt='Rock' title='Rock'></td>";
+				echo "<td width=5% class='center'><img src='images/types/Ghost.png' alt='Ghost' title='Ghost'></td>";
+				echo "<td width=5% class='center'><img src='images/types/Dragon.png' alt='Dragon' title='Dragon'></td>";
+				echo "<td width=5% class='center'><img src='images/types/Dark.png' alt='Dark' title='Dark'></td>";
+				echo "<td width=5% class='center'><img src='images/types/Steel.png' alt='Steel' title='Steel'></td></tr>";
+				echo "<tr><td width=5% class='center'>*$DTNormal</td>";
+				echo "<td width=5% class='center'>*$DTFire</td>";
+				echo "<td width=5% class='center'>*$DTWater</td>";
+				echo "<td width=5% class='center'>*$DTElectric</td>";
+				echo "<td width=5% class='center'>*$DTGrass</td>";
+				echo "<td width=5% class='center'>*$DTIce</td>";
+				echo "<td width=5% class='center'>*$DTFighting</td>";
+				echo "<td width=5% class='center'>*$DTPoison</td>";
+				echo "<td width=5% class='center'>*$DTGround</td>";
+				echo "<td width=5% class='center'>*$DTFlying</td>";
+				echo "<td width=5% class='center'>*$DTPsychic</td>";
+				echo "<td width=5% class='center'>*$DTBug</td>";
+				echo "<td width=5% class='center'>*$DTRock</td>";
+				echo "<td width=5% class='center'>*$DTGhost</td>";
+				echo "<td width=5% class='center'>*$DTDragon</td>";
+				echo "<td width=5% class='center'>*$DTDark</td>";
+				echo "<td width=5% class='center'>*$DTSteel</td></tr></table>";
+				
+				echo "<br>";
+				
+				//Damage done
+				echo "<table align='center' cellspacing='3'>";
+				echo "<tr><th colspan='18'>Damage done</th></tr>";
+				echo "<tr><td width=5% class='center'><img src='images/types/Normal.png' alt='Normal' title='Normal'></td>";
+				echo "<td width=5% class='center'><img src='images/types/Fire.png' alt='Fire' title='Fire'></td>";
+				echo "<td width=5% class='center'><img src='images/types/Water.png' alt='Water' title='Water'></td>";
+				echo "<td width=5% class='center'><img src='images/types/Electric.png' alt='Electric' title='Electric'></td>";
+				echo "<td width=5% class='center'><img src='images/types/Grass.png' alt='Grass' title='Grass'></td>";
+				echo "<td width=5% class='center'><img src='images/types/Ice.png' alt='Ice' title='Ice'></td>";
+				echo "<td width=5% class='center'><img src='images/types/Fighting.png' alt='Fighting' title='Fighting'></td>";
+				echo "<td width=5% class='center'><img src='images/types/Poison.png' alt='Poison' title='Poison'></td>";
+				echo "<td width=5% class='center'><img src='images/types/Ground.png' alt='Ground' title='Ground'></td>";
+				echo "<td width=5% class='center'><img src='images/types/Flying.png' alt='Flying' title='Flying'></td>";
+				echo "<td width=5% class='center'><img src='images/types/Psychic.png' alt='Psychic' title='Psychic'></td>";
+				echo "<td width=5% class='center'><img src='images/types/Bug.png' alt='Bug' title='Bug'></td>";
+				echo "<td width=5% class='center'><img src='images/types/Rock.png' alt='Rock' title='Rock'></td>";
+				echo "<td width=5% class='center'><img src='images/types/Ghost.png' alt='Ghost' title='Ghost'></td>";
+				echo "<td width=5% class='center'><img src='images/types/Dragon.png' alt='Dragon' title='Dragon'></td>";
+				echo "<td width=5% class='center'><img src='images/types/Dark.png' alt='Dark' title='Dark'></td>";
+				echo "<td width=5% class='center'><img src='images/types/Steel.png' alt='Steel' title='Steel'></td></tr>";
+				echo "<tr><td wiDDh=5% class='center'>*$DDNormal</td>";
+				echo "<td wiDDh=5% class='center'>*$DDFire</td>";
+				echo "<td wiDDh=5% class='center'>*$DDWater</td>";
+				echo "<td wiDDh=5% class='center'>*$DDElectric</td>";
+				echo "<td wiDDh=5% class='center'>*$DDGrass</td>";
+				echo "<td wiDDh=5% class='center'>*$DDIce</td>";
+				echo "<td wiDDh=5% class='center'>*$DDFighting</td>";
+				echo "<td wiDDh=5% class='center'>*$DDPoison</td>";
+				echo "<td wiDDh=5% class='center'>*$DDGround</td>";
+				echo "<td wiDDh=5% class='center'>*$DDFlying</td>";
+				echo "<td wiDDh=5% class='center'>*$DDPsychic</td>";
+				echo "<td wiDDh=5% class='center'>*$DDBug</td>";
+				echo "<td wiDDh=5% class='center'>*$DDRock</td>";
+				echo "<td wiDDh=5% class='center'>*$DDGhost</td>";
+				echo "<td wiDDh=5% class='center'>*$DDDragon</td>";
+				echo "<td wiDDh=5% class='center'>*$DDDark</td>";
+				echo "<td wiDDh=5% class='center'>*$DDSteel</td></tr></table>";
+				
+				echo "<br>";
+				
 				//Location
 				echo "<table align='center' cellspacing='3'>";
 				echo "<tr><th colspan='2'>Locations</th></tr>";
