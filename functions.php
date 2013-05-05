@@ -192,7 +192,7 @@
 		}
 		
 		switch ($type2) {
-						case "Normal":
+			case "Normal":
 				$DTFighting = $DTFighting * 2;
 				$DTGhost = $DTGhost * 0;
 			break;
@@ -341,6 +341,298 @@
 	
 	function damageDone($type, $type2, &$DDNormal, &$DDFire, &$DDWater, &$DDElectric, &$DDGrass, &$DDIce, &$DDFighting, &$DDPoison, &$DDGround, &$DDFlying, &$DDPsychic, &$DDBug, &$DDRock, &$DDGhost, &$DDDragon, &$DDDark, &$DDSteel)
 	{
+		switch ($type) {
+			case "Normal":
+				$DDRock = $DDRock * 0.5;
+				$DDGhost = $DDGhost * 0;
+				$DDSteel = $DDSteel * 0.5;
+			break;
+			case "Fire":
+				$DDFire = $DDFire * 0.5;
+				$DDWater = $DDWater * 0.5;
+				$DDGrass = $DDGrass * 2;
+				$DDIce = $DDIce * 2;
+				$DDBug = $DDBug * 2;
+				$DDRock = $DDRock * 0.5;
+				$DDDragon = $DDDragon * 0.5;
+				$DDSteel = $DDSteel * 2;
+			break;
+			case "Water":
+				$DDFire = $DDFire * 2;
+				$DDWater = $DDWater * 0.5;
+				$DDGrass = $DDGrass * 0.5;
+				$DDGround = $DDGround * 2;
+				$DDRock = $DDRock * 2;
+				$DDDragon = $DDDragon * 0.5;
+			break;
+			case "Electric":
+				$DDWater = $DDWater * 2;
+				$DDElectric = $DDElectric * 0.5;
+				$DDGrass = $DDGrass * 0.5;
+				$DDGround = $DDGround * 0;
+				$DDFlying = $DDFlying * 2;
+				$DDDragon = $DDDragon * 0.5;
+			break;
+			case "Grass":
+				$DDFire = $DDFire * 0.5;
+				$DDGrass = $DDGrass * 0.5;
+				$DDWater = $DDWater * 2;
+				$DDPoison = $DDPoison * 0.5;
+				$DDGround = $DDGround * 2;
+				$DDFlying = $DDFlying * 0.5;
+				$DDBug = $DDBug * 0.5;
+				$DDRock = $DDRock * 2;
+				$DDDragon = $DDDragon * 0.5;
+				$DDSteel = $DDSteel * 0.5;
+			break;
+			case "Ice":
+				$DDFire = $DDFire * 0.5;
+				$DDGrass = $DDGrass * 2;
+				$DDWater = $DDWater * 0.5;
+				$DDIce = $DDIce * 0.5;
+				$DDGround = $DDGround * 2;
+				$DDFlying = $DDFlying * 2;
+				$DDDragon = $DDDragon * 2;
+				$DDSteel = $DDSteel * 0.5;
+			break;
+			case "Fighting":
+				$DDNormal = $DDNormal * 2;
+				$DDIce = $DDIce * 2;
+				$DDPoison = $DDPoison * 0.5;
+				$DDFlying = $DDFlying * 0.5;
+				$DDPsychic = $DDPsychic * 0.5;
+				$DDBug = $DDBug * 0.5;
+				$DDRock = $DDRock * 2;
+				$DDGhost = $DDGhost * 0;
+				$DDDark = $DDDark * 2;
+				$DDSteel = $DDSteel * 2;
+			break;
+			case "Poison":
+				$DDGrass = $DDGrass * 2;
+				$DDPoison = $DDPoison * 0.5;
+				$DDGround = $DDGround * 0.5;
+				$DDRock = $DDRock * 0.5;
+				$DDGhost = $DDGhost * 0.5;
+				$DDSteel = $DDSteel * 0;
+			break;
+			case "Ground":
+				$DDFire = $DDFire * 2;
+				$DDElectric = $DDElectric * 2;
+				$DDGrass = $DDGrass * 0.5;
+				$DDPoison = $DDPoison * 2;
+				$DDFlying = $DDFlying * 0;
+				$DDBug = $DDBug * 0.5;
+				$DDRock = $DDRock * 2;
+				$DDSteel = $DDSteel * 2;
+			break;
+			case "Flying":
+				$DDElectric = $DDElectric * 0.5;
+				$DDGrass = $DDGrass * 2;
+				$DDFighting = $DDFighting * 2;
+				$DDBug = $DDBug * 2;
+				$DDRock = $DDRock * 0.5;
+				$DDSteel = $DDSteel * 0.5;
+			break;
+			case "Psychic":
+				$DDFighting = $DDFighting * 2;
+				$DDPoison = $DDPoison * 2;
+				$DDPsychic = $DDPsychic * 0.5;
+				$DDDark = $DDDark * 0;
+				$DDSteel = $DDSteel * 0.5;
+			break;
+			case "Bug":
+				$DDFire = $DDFire * 0.5;
+				$DDGrass = $DDGrass * 2;
+				$DDFighting = $DDFighting * 0.5;
+				$DDPoison = $DDPoison * 0.5;
+				$DDFlying = $DDFlying * 0.5;
+				$DDPsychic = $DDPsychic * 2;
+				$DDGhost = $DDGhost * 0.5;
+				$DDDark = $DDDark * 2;
+				$DDSteel = $DDSteel * 0.5;
+			break;
+			case "Rock":
+				$DDFire = $DDFire * 2;
+				$DDIce = $DDIce * 2;
+				$DDFighting = $DDFighting * 0.5;
+				$DDGround = $DDGround * 0.5;
+				$DDFlying = $DDFlying * 2;
+				$DDBug = $DDBug * 2;
+				$DDSteel = $DDSteel * 0.5;
+			break;
+			case "Ghost":
+				$DDNormal = $DDNormal * 0;
+				$DDPsychic = $DDPsychic * 2;
+				$DDSteel = $DDSteel * 0.5;
+				$DDGhost = $DDGhost * 2;
+				$DDDark = $DDDark * 0.5;
+			break;
+			case "Dragon":
+				$DDDragon = $DDDragon * 2;
+				$DDSteel = $DDSteel * 0.5;
+			break;
+			case "Dark":
+				$DDFighting = $DDFighting * 0.5;
+				$DDPsychic = $DDPsychic * 2;
+				$DDGhost = $DDGhost * 2;
+				$DDDark = $DDDark * 0.5;
+				$DDSteel = $DDSteel * 0.5;
+			break;
+			case "Steel":
+				$DDFire = $DDFire * 0.5;
+				$DDWater = $DDWater * 0.5;
+				$DDElectric = $DDElectric * 0.5;
+				$DDIce = $DDIce * 2;
+				$DDRock = $DDRock * 2;
+				$DDSteel = $DDSteel * 0.5;
+			break;
+		}
 		
+		switch ($type2) {
+			case "Normal":
+				$DDRock = $DDRock * 0.5;
+				$DDGhost = $DDGhost * 0;
+				$DDSteel = $DDSteel * 0.5;
+			break;
+			case "Fire":
+				$DDFire = $DDFire * 0.5;
+				$DDWater = $DDWater * 0.5;
+				$DDGrass = $DDGrass * 2;
+				$DDIce = $DDIce * 2;
+				$DDBug = $DDBug * 2;
+				$DDRock = $DDRock * 0.5;
+				$DDDragon = $DDDragon * 0.5;
+				$DDSteel = $DDSteel * 2;
+			break;
+			case "Water":
+				$DDFire = $DDFire * 2;
+				$DDWater = $DDWater * 0.5;
+				$DDGrass = $DDGrass * 0.5;
+				$DDGround = $DDGround * 2;
+				$DDRock = $DDRock * 2;
+				$DDDragon = $DDDragon * 0.5;
+			break;
+			case "Electric":
+				$DDWater = $DDWater * 2;
+				$DDElectric = $DDElectric * 0.5;
+				$DDGrass = $DDGrass * 0.5;
+				$DDGround = $DDGround * 0;
+				$DDFlying = $DDFlying * 2;
+				$DDDragon = $DDDragon * 0.5;
+			break;
+			case "Grass":
+				$DDFire = $DDFire * 0.5;
+				$DDGrass = $DDGrass * 0.5;
+				$DDWater = $DDWater * 2;
+				$DDPoison = $DDPoison * 0.5;
+				$DDGround = $DDGround * 2;
+				$DDFlying = $DDFlying * 0.5;
+				$DDBug = $DDBug * 0.5;
+				$DDRock = $DDRock * 2;
+				$DDDragon = $DDDragon * 0.5;
+				$DDSteel = $DDSteel * 0.5;
+			break;
+			case "Ice":
+				$DDFire = $DDFire * 0.5;
+				$DDGrass = $DDGrass * 2;
+				$DDWater = $DDWater * 0.5;
+				$DDIce = $DDIce * 0.5;
+				$DDGround = $DDGround * 2;
+				$DDFlying = $DDFlying * 2;
+				$DDDragon = $DDDragon * 2;
+				$DDSteel = $DDSteel * 0.5;
+			break;
+			case "Fighting":
+				$DDNormal = $DDNormal * 2;
+				$DDIce = $DDIce * 2;
+				$DDPoison = $DDPoison * 0.5;
+				$DDFlying = $DDFlying * 0.5;
+				$DDPsychic = $DDPsychic * 0.5;
+				$DDBug = $DDBug * 0.5;
+				$DDRock = $DDRock * 2;
+				$DDGhost = $DDGhost * 0;
+				$DDDark = $DDDark * 2;
+				$DDSteel = $DDSteel * 2;
+			break;
+			case "Poison":
+				$DDGrass = $DDGrass * 2;
+				$DDPoison = $DDPoison * 0.5;
+				$DDGround = $DDGround * 0.5;
+				$DDRock = $DDRock * 0.5;
+				$DDGhost = $DDGhost * 0.5;
+				$DDSteel = $DDSteel * 0;
+			break;
+			case "Ground":
+				$DDFire = $DDFire * 2;
+				$DDElectric = $DDElectric * 2;
+				$DDGrass = $DDGrass * 0.5;
+				$DDPoison = $DDPoison * 2;
+				$DDFlying = $DDFlying * 0;
+				$DDBug = $DDBug * 0.5;
+				$DDRock = $DDRock * 2;
+				$DDSteel = $DDSteel * 2;
+			break;
+			case "Flying":
+				$DDElectric = $DDElectric * 0.5;
+				$DDGrass = $DDGrass * 2;
+				$DDFighting = $DDFighting * 2;
+				$DDBug = $DDBug * 2;
+				$DDRock = $DDRock * 0.5;
+				$DDSteel = $DDSteel * 0.5;
+			break;
+			case "Psychic":
+				$DDFighting = $DDFighting * 2;
+				$DDPoison = $DDPoison * 2;
+				$DDPsychic = $DDPsychic * 0.5;
+				$DDDark = $DDDark * 0;
+				$DDSteel = $DDSteel * 0.5;
+			break;
+			case "Bug":
+				$DDFire = $DDFire * 0.5;
+				$DDGrass = $DDGrass * 2;
+				$DDFighting = $DDFighting * 0.5;
+				$DDPoison = $DDPoison * 0.5;
+				$DDFlying = $DDFlying * 0.5;
+				$DDPsychic = $DDPsychic * 2;
+				$DDGhost = $DDGhost * 0.5;
+				$DDDark = $DDDark * 2;
+				$DDSteel = $DDSteel * 0.5;
+			break;
+			case "Rock":
+				$DDFire = $DDFire * 2;
+				$DDIce = $DDIce * 2;
+				$DDFighting = $DDFighting * 0.5;
+				$DDGround = $DDGround * 0.5;
+				$DDFlying = $DDFlying * 2;
+				$DDBug = $DDBug * 2;
+				$DDSteel = $DDSteel * 0.5;
+			break;
+			case "Ghost":
+				$DDNormal = $DDNormal * 0;
+				$DDPsychic = $DDPsychic * 2;
+				$DDSteel = $DDSteel * 0.5;
+				$DDGhost = $DDGhost * 2;
+				$DDDark = $DDDark * 0.5;
+			break;
+			case "Dragon":
+				$DDDragon = $DDDragon * 2;
+				$DDSteel = $DDSteel * 0.5;
+			break;
+			case "Dark":
+				$DDFighting = $DDFighting * 0.5;
+				$DDPsychic = $DDPsychic * 2;
+				$DDGhost = $DDGhost * 2;
+				$DDDark = $DDDark * 0.5;
+				$DDSteel = $DDSteel * 0.5;
+			break;
+			case "Steel":
+				$DDFire = $DDFire * 0.5;
+				$DDWater = $DDWater * 0.5;
+				$DDElectric = $DDElectric * 0.5;
+				$DDIce = $DDIce * 2;
+				$DDRock = $DDRock * 2;
+				$DDSteel = $DDSteel * 0.5;
+			break;
+		}
 	}
 ?>
