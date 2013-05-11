@@ -174,7 +174,15 @@
 				echo "<table align='center' cellspacing='3'>";
 				echo "<tr><th colspan='4'>Sprites</th></tr>";
 				echo "<tr><th>Front Normal</th><th>Front Shiny</th><th>Back Normal</th><th>Back Shiny</th></tr>";
-				echo "<tr><td><center><img src='images/front_normal/$id.png' alt='$name' title='$name'></center></td><td><center><img src='images/front_shiny/$id.png' alt='$name' title='$name'></center></td><td><center><img src='images/back_normal/$id.png' alt='$name' title='$name'></center></td><td><center><img src='images/back_shiny/$id.png' alt='$name' title='$name'></center></td></tr></table>";
+				echo "<tr height='96px'><td><center><img src='images/front_normal/$id.png' alt='$name' title='$name'></center></td><td><center><img src='images/front_shiny/$id.png' alt='$name' title='$name'></center></td><td><center><img src='images/back_normal/$id.png' alt='$name' title='$name'></center></td><td><center><img src='images/back_shiny/$id.png' alt='$name' title='$name'></center></td></tr></table>";
+				
+				echo "<br>";
+				
+				//Moving sprites
+				echo "<table align='center' cellspacing='3'>";
+				echo "<tr><th colspan='4'>Moving sprites</th></tr>";
+				echo "<tr><th>Front Normal</th><th>Front Shiny</th><th>Back Normal</th><th>Back Shiny</th></tr>";
+				echo "<tr height='96px'><td><center><img src='images/front_normal_moving/$id.gif' alt='$name' title='$name'></center></td><td><center><img src='images/front_shiny_moving/$id.gif' alt='$name' title='$name'></center></td><td><center><img src='images/back_normal_moving/$id.gif' alt='$name' title='$name'></center></td><td><center><img src='images/back_shiny_moving/$id.gif' alt='$name' title='$name'></center></td></tr></table>";
 				
 				echo "<br>";
 				
