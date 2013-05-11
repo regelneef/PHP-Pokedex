@@ -55,10 +55,10 @@
 				
 				echo "<br>";
 				
-				if ($whiteLocationName == "Trade required." and $blackLocationName = "Trade required.")
+				if ($whiteLocationName == "Trade required." and $blackLocationName == "Trade required.")
 				{
 						echo "<table align='center' cellspacing='3'>";
-						echo "<tr><th>$name is can't be found in the wild!</th></tr></table>";
+						echo "<tr><th>$name can't be found in the wild!</th></tr></table>";
 				}
 				
 				else 
