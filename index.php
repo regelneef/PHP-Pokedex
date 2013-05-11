@@ -268,8 +268,8 @@
 				
 				//Location
 				echo "<table align='center' cellspacing='3'>";
-				echo "<tr><th colspan='2'>Locations</th></tr>";
-				echo "<tr><td width=10% class='black'>Black</td><td>$blackLocationName</td></tr>";
+				echo "<tr><th colspan='3'>Locations</th></tr>";
+				echo "<tr><td width=10% class='black'>Black</td><td>$blackLocationName</td><td width=5% rowspan='4'><a href='location.php?pokemon=$id'>Details</a></td></tr>";
 				echo "<tr><td width=10% class='white'>White</td><td>$whiteLocationName</td></tr>";
 				echo "<tr><td width=10% class='black'>Black 2</td><td>No database info yet.</td></tr>";
 				echo "<tr><td width=10% class='white'>White 2</td><td>No database info yet.</td></tr></table>";
