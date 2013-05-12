@@ -164,6 +164,16 @@
 	
 	damageDone($type, $type2, $DDNormal, $DDFire, $DDWater, $DDElectric, $DDGrass, $DDIce, $DDFighting, $DDPoison, $DDGround, $DDFlying, $DDPsychic, $DDBug, $DDRock, $DDGhost, $DDDragon, $DDDark, $DDSteel);
 	
+	$query = "SELECT targetMonsterId FROM evolutions WHERE sourceMonsterId=".$id;
+	$result = mysql_query($query);
+	for ($i=0;$row = mysql_fetch_array($result);$i++)
+		$evolutionID[$i] = $row[0];
+		
+	$query = "SELECT method FROM evolutions WHERE sourceMonsterId=".$id;
+	$result = mysql_query($query);
+	for ($i=0;$row = mysql_fetch_array($result);$i++)
+		$evolutionMethod[$i] = $row[0];
+	
 	
 	mysql_close($connection);
 ?>
