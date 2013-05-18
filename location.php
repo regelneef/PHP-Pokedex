@@ -67,31 +67,22 @@
 					mysql_select_db($mysql_database, $connection);
 					
 					//Surfing	
-					$query = "SELECT locationId FROM monsterlocations WHERE monsterId=".$_GET["pokemon"]." AND locationTypeId=1";
-					$result = mysql_query($query);
-					for ($i=0;$row = mysql_fetch_array($result);$i++)
-							$location[$i] = $row[0];
+					$result = mysql_query("SELECT * FROM monsterlocations WHERE monsterId=".$_GET["pokemon"]." AND locationTypeId=1");
+					for ($i=0;$row = mysql_fetch_array($result);$i++) {
+							$locationID[$i] = $row[1];
+							$rate[$i] = $row[3];
+							$game[$i] = $row[4];
+					}
 					
-					if (!empty($location))
+					if (!empty($locationID))
 					{
-						$query = "SELECT rate FROM monsterlocations WHERE monsterId=".$_GET["pokemon"]." AND locationTypeId=1";
-						$result = mysql_query($query);
-						for ($i=0;$row = mysql_fetch_array($result);$i++)
-							$rate[$i] = $row[0];
-							
-						$query = "SELECT gameSetId FROM monsterlocations WHERE monsterId=".$_GET["pokemon"]." AND locationTypeId=1";
-						$result = mysql_query($query);		
-						for ($i=0;$row = mysql_fetch_array($result);$i++)
-							$game[$i] = $row[0];
-
 						echo "<table align='center' cellspacing='3'>";
 						echo "<tr><th colspan='3'>Surfing</th></tr>";
 						echo "<tr><th>Location</th><th>Rate</th><th>Game</th>";
 						echo "<tr>";
-						for ($i=0;$i<count($location);$i++)
+						for ($i=0;$i<count($locationID);$i++)
 						{
-							$query = "SELECT name FROM locations WHERE id=".$location[$i];
-							$result = mysql_query($query);
+							$result = mysql_query("SELECT name FROM locations WHERE id=".$locationID[$i]);
 							$row = mysql_fetch_array($result);
 							echo "<tr>";
 							echo "<td width=80%>$row[0]</td>";
@@ -106,37 +97,28 @@
 							echo "</tr>";
 						}
 						echo "</tr></table><br>";
-						unset($location);
+						unset($locationIDs);
 						unset($game);
 						unset($rate);
 					}
 					
 					//Surfing - Shaking Spots
-					$query = "SELECT locationId FROM monsterlocations WHERE monsterId=".$_GET["pokemon"]." AND locationTypeId=2";
-					$result = mysql_query($query);
-					for ($i=0;$row = mysql_fetch_array($result);$i++)
-							$location[$i] = $row[0];
+					$result = mysql_query("SELECT * FROM monsterlocations WHERE monsterId=".$_GET["pokemon"]." AND locationTypeId=2");
+					for ($i=0;$row = mysql_fetch_array($result);$i++) {
+							$locationID[$i] = $row[1];
+							$rate[$i] = $row[3];
+							$game[$i] = $row[4];
+					}
 					
-					if (!empty($location))
+					if (!empty($locationID))
 					{
-						$query = "SELECT rate FROM monsterlocations WHERE monsterId=".$_GET["pokemon"]." AND locationTypeId=2";
-						$result = mysql_query($query);
-						for ($i=0;$row = mysql_fetch_array($result);$i++)
-							$rate[$i] = $row[0];
-							
-						$query = "SELECT gameSetId FROM monsterlocations WHERE monsterId=".$_GET["pokemon"]." AND locationTypeId=2";
-						$result = mysql_query($query);		
-						for ($i=0;$row = mysql_fetch_array($result);$i++)
-							$game[$i] = $row[0];
-
 						echo "<table align='center' cellspacing='3'>";
 						echo "<tr><th colspan='3'>Surfing - Shaking Spots</th></tr>";
 						echo "<tr><th>Location</th><th>Rate</th><th>Game</th>";
 						echo "<tr>";
-						for ($i=0;$i<count($location);$i++)
+						for ($i=0;$i<count($locationID);$i++)
 						{
-							$query = "SELECT name FROM locations WHERE id=".$location[$i];
-							$result = mysql_query($query);
+							$result = mysql_query("SELECT name FROM locations WHERE id=".$locationID[$i]);
 							$row = mysql_fetch_array($result);
 							echo "<tr>";
 							echo "<td width=80%>$row[0]</td>";
@@ -151,37 +133,28 @@
 							echo "</tr>";
 						}
 						echo "</tr></table><br>";
-						unset($location);
+						unset($locationID);
 						unset($game);
 						unset($rate);
 					}
 					
 					//Fishing
-					$query = "SELECT locationId FROM monsterlocations WHERE monsterId=".$_GET["pokemon"]." AND locationTypeId=3";
-					$result = mysql_query($query);
-					for ($i=0;$row = mysql_fetch_array($result);$i++)
-							$location[$i] = $row[0];
+					$result = mysql_query("SELECT * FROM monsterlocations WHERE monsterId=".$_GET["pokemon"]." AND locationTypeId=3");
+					for ($i=0;$row = mysql_fetch_array($result);$i++) {
+							$locationID[$i] = $row[1];
+							$rate[$i] = $row[3];
+							$game[$i] = $row[4];
+					}
 					
-					if (!empty($location))
+					if (!empty($locationID))
 					{
-						$query = "SELECT rate FROM monsterlocations WHERE monsterId=".$_GET["pokemon"]." AND locationTypeId=3";
-						$result = mysql_query($query);
-						for ($i=0;$row = mysql_fetch_array($result);$i++)
-							$rate[$i] = $row[0];
-							
-						$query = "SELECT gameSetId FROM monsterlocations WHERE monsterId=".$_GET["pokemon"]." AND locationTypeId=3";
-						$result = mysql_query($query);		
-						for ($i=0;$row = mysql_fetch_array($result);$i++)
-							$game[$i] = $row[0];
-
 						echo "<table align='center' cellspacing='3'>";
 						echo "<tr><th colspan='3'>Fishing</th></tr>";
 						echo "<tr><th>Location</th><th>Rate</th><th>Game</th>";
 						echo "<tr>";
-						for ($i=0;$i<count($location);$i++)
+						for ($i=0;$i<count($locationID);$i++)
 						{
-							$query = "SELECT name FROM locations WHERE id=".$location[$i];
-							$result = mysql_query($query);
+							$result = mysql_query("SELECT name FROM locations WHERE id=".$locationID[$i]);
 							$row = mysql_fetch_array($result);
 							echo "<tr>";
 							echo "<td width=80%>$row[0]</td>";
@@ -196,37 +169,28 @@
 							echo "</tr>";
 						}
 						echo "</tr></table><br>";
-						unset($location);
+						unset($locationID);
 						unset($game);
 						unset($rate);
 					}
 					
 					//Fishing - Shaking Spots
-					$query = "SELECT locationId FROM monsterlocations WHERE monsterId=".$_GET["pokemon"]." AND locationTypeId=4";
-					$result = mysql_query($query);
-					for ($i=0;$row = mysql_fetch_array($result);$i++)
-							$location[$i] = $row[0];
+					$result = mysql_query("SELECT * FROM monsterlocations WHERE monsterId=".$_GET["pokemon"]." AND locationTypeId=4");
+					for ($i=0;$row = mysql_fetch_array($result);$i++) {
+							$locationID[$i] = $row[1];
+							$rate[$i] = $row[3];
+							$game[$i] = $row[4];
+					}
 					
-					if (!empty($location))
+					if (!empty($locationID))
 					{
-						$query = "SELECT rate FROM monsterlocations WHERE monsterId=".$_GET["pokemon"]." AND locationTypeId=4";
-						$result = mysql_query($query);
-						for ($i=0;$row = mysql_fetch_array($result);$i++)
-							$rate[$i] = $row[0];
-							
-						$query = "SELECT gameSetId FROM monsterlocations WHERE monsterId=".$_GET["pokemon"]." AND locationTypeId=4";
-						$result = mysql_query($query);		
-						for ($i=0;$row = mysql_fetch_array($result);$i++)
-							$game[$i] = $row[0];
-
 						echo "<table align='center' cellspacing='3'>";
 						echo "<tr><th colspan='3'>Fishing - Shaking Spots</th></tr>";
 						echo "<tr><th>Location</th><th>Rate</th><th>Game</th>";
 						echo "<tr>";
-						for ($i=0;$i<count($location);$i++)
+						for ($i=0;$i<count($locationID);$i++)
 						{
-							$query = "SELECT name FROM locations WHERE id=".$location[$i];
-							$result = mysql_query($query);
+							$result = mysql_query("SELECT name FROM locations WHERE id=".$locationID[$i]);
 							$row = mysql_fetch_array($result);
 							echo "<tr>";
 							echo "<td width=80%>$row[0]</td>";
@@ -241,37 +205,28 @@
 							echo "</tr>";
 						}
 						echo "</tr></table><br>";
-						unset($location);
+						unset($locationID);
 						unset($game);
 						unset($rate);
 					}
 					
 					//Walking
-					$query = "SELECT locationId FROM monsterlocations WHERE monsterId=".$_GET["pokemon"]." AND locationTypeId=5";
-					$result = mysql_query($query);
-					for ($i=0;$row = mysql_fetch_array($result);$i++)
-							$location[$i] = $row[0];
+					$result = mysql_query("SELECT * FROM monsterlocations WHERE monsterId=".$_GET["pokemon"]." AND locationTypeId=5");
+					for ($i=0;$row = mysql_fetch_array($result);$i++) {
+							$locationID[$i] = $row[1];
+							$rate[$i] = $row[3];
+							$game[$i] = $row[4];
+					}
 					
-					if (!empty($location))
+					if (!empty($locationID))
 					{
-						$query = "SELECT rate FROM monsterlocations WHERE monsterId=".$_GET["pokemon"]." AND locationTypeId=5";
-						$result = mysql_query($query);
-						for ($i=0;$row = mysql_fetch_array($result);$i++)
-							$rate[$i] = $row[0];
-							
-						$query = "SELECT gameSetId FROM monsterlocations WHERE monsterId=".$_GET["pokemon"]." AND locationTypeId=5";
-						$result = mysql_query($query);		
-						for ($i=0;$row = mysql_fetch_array($result);$i++)
-							$game[$i] = $row[0];
-
 						echo "<table align='center' cellspacing='3'>";
 						echo "<tr><th colspan='3'>Walking</th></tr>";
 						echo "<tr><th>Location</th><th>Rate</th><th>Game</th>";
 						echo "<tr>";
-						for ($i=0;$i<count($location);$i++)
+						for ($i=0;$i<count($locationID);$i++)
 						{
-							$query = "SELECT name FROM locations WHERE id=".$location[$i];
-							$result = mysql_query($query);
+							$result = mysql_query("SELECT name FROM locations WHERE id=".$locationID[$i]);
 							$row = mysql_fetch_array($result);
 							echo "<tr>";
 							echo "<td width=80%>$row[0]</td>";
@@ -286,37 +241,28 @@
 							echo "</tr>";
 						}
 						echo "</tr></table><br>";
-						unset($location);
+						unset($locationID);
 						unset($game);
 						unset($rate);
 					}
 					
 					//Double Grass
-					$query = "SELECT locationId FROM monsterlocations WHERE monsterId=".$_GET["pokemon"]." AND locationTypeId=6";
-					$result = mysql_query($query);
-					for ($i=0;$row = mysql_fetch_array($result);$i++)
-							$location[$i] = $row[0];
+					$result = mysql_query("SELECT * FROM monsterlocations WHERE monsterId=".$_GET["pokemon"]." AND locationTypeId=6");
+					for ($i=0;$row = mysql_fetch_array($result);$i++) {
+							$locationID[$i] = $row[1];
+							$rate[$i] = $row[3];
+							$game[$i] = $row[4];
+					}
 					
-					if (!empty($location))
+					if (!empty($locationID))
 					{
-						$query = "SELECT rate FROM monsterlocations WHERE monsterId=".$_GET["pokemon"]." AND locationTypeId=6";
-						$result = mysql_query($query);
-						for ($i=0;$row = mysql_fetch_array($result);$i++)
-							$rate[$i] = $row[0];
-							
-						$query = "SELECT gameSetId FROM monsterlocations WHERE monsterId=".$_GET["pokemon"]." AND locationTypeId=6";
-						$result = mysql_query($query);		
-						for ($i=0;$row = mysql_fetch_array($result);$i++)
-							$game[$i] = $row[0];
-
 						echo "<table align='center' cellspacing='3'>";
 						echo "<tr><th colspan='3'>Double Grass</th></tr>";
 						echo "<tr><th>Location</th><th>Rate</th><th>Game</th>";
 						echo "<tr>";
-						for ($i=0;$i<count($location);$i++)
+						for ($i=0;$i<count($locationID);$i++)
 						{
-							$query = "SELECT name FROM locations WHERE id=".$location[$i];
-							$result = mysql_query($query);
+							$result = mysql_query("SELECT name FROM locations WHERE id=".$locationID[$i]);
 							$row = mysql_fetch_array($result);
 							echo "<tr>";
 							echo "<td width=80%>$row[0]</td>";
@@ -331,37 +277,28 @@
 							echo "</tr>";
 						}
 						echo "</tr></table><br>";
-						unset($location);
+						unset($locationID);
 						unset($game);
 						unset($rate);
 					}
 					
 					//Walking - Shaking Spots
-					$query = "SELECT locationId FROM monsterlocations WHERE monsterId=".$_GET["pokemon"]." AND locationTypeId=7";
-					$result = mysql_query($query);
-					for ($i=0;$row = mysql_fetch_array($result);$i++)
-							$location[$i] = $row[0];
+					$result = mysql_query("SELECT * FROM monsterlocations WHERE monsterId=".$_GET["pokemon"]." AND locationTypeId=7");
+					for ($i=0;$row = mysql_fetch_array($result);$i++) {
+							$locationID[$i] = $row[1];
+							$rate[$i] = $row[3];
+							$game[$i] = $row[4];
+					}
 					
-					if (!empty($location))
+					if (!empty($locationID))
 					{
-						$query = "SELECT rate FROM monsterlocations WHERE monsterId=".$_GET["pokemon"]." AND locationTypeId=7";
-						$result = mysql_query($query);
-						for ($i=0;$row = mysql_fetch_array($result);$i++)
-							$rate[$i] = $row[0];
-							
-						$query = "SELECT gameSetId FROM monsterlocations WHERE monsterId=".$_GET["pokemon"]." AND locationTypeId=7";
-						$result = mysql_query($query);		
-						for ($i=0;$row = mysql_fetch_array($result);$i++)
-							$game[$i] = $row[0];
-
 						echo "<table align='center' cellspacing='3'>";
 						echo "<tr><th colspan='3'>Walking - Shaking Spots</th></tr>";
 						echo "<tr><th>Location</th><th>Rate</th><th>Game</th>";
 						echo "<tr>";
-						for ($i=0;$i<count($location);$i++)
+						for ($i=0;$i<count($locationID);$i++)
 						{
-							$query = "SELECT name FROM locations WHERE id=".$location[$i];
-							$result = mysql_query($query);
+							$result = mysql_query("SELECT name FROM locations WHERE id=".$locationID[$i]);
 							$row = mysql_fetch_array($result);
 							echo "<tr>";
 							echo "<td width=80%>$row[0]</td>";
@@ -376,7 +313,7 @@
 							echo "</tr>";
 						}
 						echo "</tr></table><br>";
-						unset($location);
+						unset($locationID);
 						unset($game);
 						unset($rate);
 					}
