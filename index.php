@@ -286,7 +286,7 @@
 					{
 						echo "<tr><td><center><img src='images/front_normal/$id.png' alt='$name' title='$name'></center></td>";
 						echo "<td><center>$evolutionMethod[$i]</center></td>";
-						echo "<td><center><img src='images/front_normal/$evolutionID[$i].png' alt='$name' title='$name'></center></td></tr>";
+						echo "<td><center><a href='index.php?pokemon=$evolutionID[$i]'><img src='images/front_normal/$evolutionID[$i].png' alt='$name' title='$name'></a></center></td></tr>";
 					}
 				}
 				
