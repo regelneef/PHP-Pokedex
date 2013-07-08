@@ -8,11 +8,11 @@
 	<body>
 	
 	<?php
-	echo "<table align='center' cellspacing='3'>";
-	echo "<tr><th><a href='pokemon.php'>Pokémons</a></th></tr>";
-	echo "<tr><th>Location</th></tr>";
-	echo "<tr><th>Moves</th></tr>";
-	echo "</table>";
+		echo "<table align='center' cellspacing='3'>";
+		echo "<tr><th><a href='pokemons.php'>Pokémons</a></th></tr>";
+		echo "<tr><th>Location</th></tr>";
+		echo "<tr><th><a href='moves.php'>Moves</a></th></tr>";
+		echo "</table>";
 	?>
 	</body>
 </html>

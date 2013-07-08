@@ -27,7 +27,7 @@
 	$result = mysql_query($query);	
 	$row = mysql_fetch_array($result);
 		
-	$whiteLocation = "1";
+	$whiteLocationName = "1";
 	if (empty($row))
 	{
 		$whiteLocationName = "0";

@@ -25,7 +25,7 @@
 				
 				//Category
 				echo "<table align='center' cellspacing='3'>";
-				echo "<tr><th class='hidden' width=10%></th><th class='hidden' width=10%></th><th class='hidden' width=10%></th><th class='hidden' width=10%></th><th class='hidden' width=10%></th><th width=10%><a href='pokemons.php'>Pokémons</a></th><th width=10%><a href='#'>General</a></th><th width=10%><a href='pokemon_location.php?id=$id'>Location</a></th><th width=10%><a href='moves.php?pokemon=$id'>Moves</a></th></tr></table>";
+				echo "<tr><th class='hidden' width=10%></th><th class='hidden' width=10%></th><th class='hidden' width=10%></th><th class='hidden' width=10%></th><th class='hidden' width=10%></th><th width=10%><a href='pokemons.php'>Pokémons</a></th><th width=10%><a href='#'>General</a></th><th width=10%><a href='pokemon_location.php?id=$id'>Location</a></th><th width=10%><a href='pokemon_moves.php?pokemon=$id'>Moves</a></th></tr></table>";
 				
 				echo "<br>";
 				

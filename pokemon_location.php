@@ -25,7 +25,7 @@
 				
 				//Category
 				echo "<table align='center' cellspacing='3'>";
-				echo "<tr><th class='hidden' width=10%></th><th class='hidden' width=10%></th><th class='hidden' width=10%></th><th class='hidden' width=10%></th><th class='hidden' width=10%></th><th width=10%><a href='pokemons.php'>Pokémons</a></th><th width=10%><a href='pokemon.php?id=$id'>General</a></th><th width=10%><a href=#>Location</a></th><th width=10%><a href='moves.php?pokemon=$id'>Moves</a></th></tr></table>";
+				echo "<tr><th class='hidden' width=10%></th><th class='hidden' width=10%></th><th class='hidden' width=10%></th><th class='hidden' width=10%></th><th class='hidden' width=10%></th><th width=10%><a href='pokemons.php'>Pokémons</a></th><th width=10%><a href='pokemon.php?id=$id'>General</a></th><th width=10%><a href=#>Location</a></th><th width=10%><a href='pokemon_moves.php?pokemon=$id'>Moves</a></th></tr></table>";
 				
 				echo "<br>";
 				
@@ -44,7 +44,7 @@
 				
 				echo "<br>";
 				
-				if ($whiteLocation == "0" and $blackLocation == "0")
+				if ($whiteLocationName == "0" and $blackLocationName == "0")
 				{
 						echo "<table align='center' cellspacing='3'>";
 						echo "<tr><th>$name can't be found in the wild!</th></tr></table>";
