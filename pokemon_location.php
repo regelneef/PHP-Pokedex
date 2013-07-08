@@ -9,53 +9,42 @@
 		<?php
 			include 'config.php';
 			
-			if (!isset($_GET["pokemon"]))
-				$_GET["pokemon"] = 1;
-				
-			echo "<form action='location.php' method='get'>";
-			echo "<select name='pokemon'>";
-			echo "<option>Pokémons</option>";
-	
-			$connection = mysql_connect($mysql_address,$mysql_username,$mysql_password);
-			mysql_select_db($mysql_database, $connection);
-		
-			$result = mysql_query("SELECT * FROM monsters");
-			while ($row = mysql_fetch_array($result))
-			    echo "<option value='$row[0]'>$row[1]</option>\n";
-						
-			mysql_close($connection);
+			if (!isset($_GET["id"]))
+				$_GET["id"] = 1;
 			
-			echo "</select>";
-			echo "<input type='submit' value='Select' /></form>";
-			
-			if ($_GET["pokemon"] < 1 or $_GET["pokemon"] > 649)
+			if ($_GET["id"] < 1 or $_GET["id"] > 649)
 			{
 				echo "<title>Pokedex</title>";
 				echo "<table align='center'><th>This Pokémon not exist in the database!</th></table>";
 			}
 				
 			else {
-				include 'data.php';
+				include 'data/data_location.php';
 				
-				echo "<title>Pokedex - $name</title>";
+				echo "<title>Location - $name</title>";
+				
+				//Category
+				echo "<table align='center' cellspacing='3'>";
+				echo "<tr><th class='hidden' width=10%></th><th class='hidden' width=10%></th><th class='hidden' width=10%></th><th class='hidden' width=10%></th><th class='hidden' width=10%></th><th width=10%><a href='pokemons.php'>Pokémons</a></th><th width=10%><a href='pokemon.php?id=$id'>General</a></th><th width=10%><a href=#>Location</a></th><th width=10%><a href='moves.php?pokemon=$id'>Moves</a></th></tr></table>";
+				
+				echo "<br>";
 				
 				//Navigation
 				echo "<table align='center' cellspacing='3'>";
 				echo "<tr><th colspan='3'>Navigation</th></tr>";
 				if ($id != 1)
-					echo "<tr><td width=10% class='left'><img src='images/icons/$previousID.png' alt='$previousName' title='$previousName'><br><a href='location.php?pokemon=$previousID'><- $previousName</a>";
+					echo "<tr><td width=10% class='left'><img src='images/icons/$previousID.png' alt='$previousName' title='$previousName'><br><a href='pokemon_location.php?id=$previousID'><- $previousName</a>";
 				else
 					echo "<td width=10% class='left'></td>";
 				echo "</td><td class='name'><center><img src='images/icons/$id.png' alt='$name' title='$name'>  $name</center></td>";
 				if ($id != 649)
-					echo "<td width=10% class='right'><img src='images/icons/$nextID.png' alt='$nextName' title='$nextName'><a href='location.php?pokemon=$nextID'><br>$nextName-></a></td></tr>";
+					echo "<td width=10% class='right'><img src='images/icons/$nextID.png' alt='$nextName' title='$nextName'><a href='pokemon_location.php?id=$nextID'><br>$nextName-></a></td></tr></table>";
 				else
-					echo "<td width=10% class='left'></td></tr>";
-				echo "<tr><td colspan='3'><center><a href='index.php?pokemon=$id'>Back to the main page.</a><center></td></tr></table>";
+					echo "<td width=10% class='left'></td></tr></table>";
 				
 				echo "<br>";
 				
-				if ($whiteLocationName == "Trade required." and $blackLocationName == "Trade required.")
+				if ($whiteLocation == "0" and $blackLocation == "0")
 				{
 						echo "<table align='center' cellspacing='3'>";
 						echo "<tr><th>$name can't be found in the wild!</th></tr></table>";
@@ -67,7 +56,7 @@
 					mysql_select_db($mysql_database, $connection);
 					
 					//Surfing	
-					$result = mysql_query("SELECT * FROM monsterlocations WHERE monsterId=".$_GET["pokemon"]." AND locationTypeId=1");
+					$result = mysql_query("SELECT * FROM monsterlocations WHERE monsterId=".$_GET["id"]." AND locationTypeId=1");
 					for ($i=0;$row = mysql_fetch_array($result);$i++) {
 							$locationID[$i] = $row[1];
 							$rate[$i] = $row[3];
@@ -103,7 +92,7 @@
 					}
 					
 					//Surfing - Shaking Spots
-					$result = mysql_query("SELECT * FROM monsterlocations WHERE monsterId=".$_GET["pokemon"]." AND locationTypeId=2");
+					$result = mysql_query("SELECT * FROM monsterlocations WHERE monsterId=".$_GET["id"]." AND locationTypeId=2");
 					for ($i=0;$row = mysql_fetch_array($result);$i++) {
 							$locationID[$i] = $row[1];
 							$rate[$i] = $row[3];
@@ -139,7 +128,7 @@
 					}
 					
 					//Fishing
-					$result = mysql_query("SELECT * FROM monsterlocations WHERE monsterId=".$_GET["pokemon"]." AND locationTypeId=3");
+					$result = mysql_query("SELECT * FROM monsterlocations WHERE monsterId=".$_GET["id"]." AND locationTypeId=3");
 					for ($i=0;$row = mysql_fetch_array($result);$i++) {
 							$locationID[$i] = $row[1];
 							$rate[$i] = $row[3];
@@ -175,7 +164,7 @@
 					}
 					
 					//Fishing - Shaking Spots
-					$result = mysql_query("SELECT * FROM monsterlocations WHERE monsterId=".$_GET["pokemon"]." AND locationTypeId=4");
+					$result = mysql_query("SELECT * FROM monsterlocations WHERE monsterId=".$_GET["id"]." AND locationTypeId=4");
 					for ($i=0;$row = mysql_fetch_array($result);$i++) {
 							$locationID[$i] = $row[1];
 							$rate[$i] = $row[3];
@@ -211,7 +200,7 @@
 					}
 					
 					//Walking
-					$result = mysql_query("SELECT * FROM monsterlocations WHERE monsterId=".$_GET["pokemon"]." AND locationTypeId=5");
+					$result = mysql_query("SELECT * FROM monsterlocations WHERE monsterId=".$_GET["id"]." AND locationTypeId=5");
 					for ($i=0;$row = mysql_fetch_array($result);$i++) {
 							$locationID[$i] = $row[1];
 							$rate[$i] = $row[3];
@@ -247,7 +236,7 @@
 					}
 					
 					//Double Grass
-					$result = mysql_query("SELECT * FROM monsterlocations WHERE monsterId=".$_GET["pokemon"]." AND locationTypeId=6");
+					$result = mysql_query("SELECT * FROM monsterlocations WHERE monsterId=".$_GET["id"]." AND locationTypeId=6");
 					for ($i=0;$row = mysql_fetch_array($result);$i++) {
 							$locationID[$i] = $row[1];
 							$rate[$i] = $row[3];
@@ -283,7 +272,7 @@
 					}
 					
 					//Walking - Shaking Spots
-					$result = mysql_query("SELECT * FROM monsterlocations WHERE monsterId=".$_GET["pokemon"]." AND locationTypeId=7");
+					$result = mysql_query("SELECT * FROM monsterlocations WHERE monsterId=".$_GET["id"]." AND locationTypeId=7");
 					for ($i=0;$row = mysql_fetch_array($result);$i++) {
 							$locationID[$i] = $row[1];
 							$rate[$i] = $row[3];

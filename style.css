@@ -18,7 +18,7 @@ table
 
 th
 {
-	border-radius: 5px;
+	border-radius: 3px;
 	font:14px Tahoma, Geneva, sans-serif;
 	font-weight: bold;
 	text-align: center;
@@ -29,7 +29,7 @@ th
 
 td
 {
-	border-radius: 5px;
+	border-radius: 3px;
 	font:12px Tahoma, Geneva, sans-serif;
 	text-align: justify;
 	background-color: rgb(75,121,166);
