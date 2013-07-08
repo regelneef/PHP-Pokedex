@@ -22,16 +22,17 @@
 			echo "<br>";			
 
 			echo "<table align='center' cellspacing='3'>";
-			echo "<tr><th colspan='6'>Moves</th></tr>";
-			echo "<tr><th>Power</th><th>PP</th><th>Accuracy</th><th>Effect</th><th>typeID</th><th>MoveClass</th>";
+			echo "<tr><th colspan='7'>Moves</th></tr>";
+			echo "<tr><th>Name</th><th>Power</th><th>PP</th><th>Accuracy</th><th>Effect</th><th>Type</th><th>Class</th>";
 			while ($row = mysql_fetch_array($result)) {
+				$name = $row[7];
 				$power = $row[1];
 				$pp = $row[2];
 				$accuracy = $row[3] * 100;
 				$effect = $row[4];
-				$typeID = $row[5];
+				$type = $row[5];
 				$moveClass = $row[6];
-				echo "<tr><td width=5% class='center'>$power</td><td width=5% class='center'>$pp</td><td width=5% class='center'>$accuracy%</td><td>$effect</td><td width=5% class='center'>$typeID</td><td width=5% class='center'>$moveClass</td></tr>";
+				echo "<tr><td width=5% class='center'>$name</td><td width=5% class='center'>$power</td><td width=5% class='center'>$pp</td><td width=5% class='center'>$accuracy%</td><td>$effect</td><td width=5% class='center'><img src='images/types/$type.png' alt='$type' title='$type'></td><td width=5% class='center'><img src='images/class/$moveClass.png' alt='$moveClass' title='$moveClass'></td></tr>";
 			}
 			echo "</table>";
 			mysql_close($connection);
